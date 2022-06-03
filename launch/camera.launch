@@ -1,16 +1,20 @@
-<!-- 
-roslaunch realsense2_camera rs_camera.launch 
-align_depth:=true
-unite_imu_method:="linear_interpolation"
-enable_gyro:=true
-enable_accel:=true 
-/-->
+<!-- http://wiki.ros.org/rtabmap_ros/Tutorials/HandHeldMapping#:~:text=realsense%20d435i%2Fl515 /-->
 
 <launch>
+
     <include file="$(find realsense2_camera)/launch/rs_camera.launch">
         <arg name="align_depth" value="true"/>
         <arg name="unite_imu_method" value="linear_interpolation"/>
         <arg name="enable_gyro" value="true"/>
         <arg name="enable_accel" value="true"/>
     </include>
+
+    <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu" output="screen">
+        <remap from="/imu/data_raw" to="/camera/imu"/>
+        <remap from="/imu/data" to="/rtabmap/imu"/>
+        <param name="_use_mag" value="false"/>
+        <param name="_publish_tf" value="false"/>
+        <param name="_world_frame" value="enu"/>
+    </node>
+    
 </launch>
