@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="wiimote" type="wiimote_node" name="wiimote_pairing" output="screen"/>
+    <node pkg="wiimote" type="teleop_wiimote" name="teleop" output="screen"/>
+</launch>
