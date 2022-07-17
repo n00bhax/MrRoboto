@@ -2,14 +2,6 @@
     <include file="$(find xrrobot)/launch/bringup.launch"/>
     <include file="$(find mr_roboto)/launch/camera.launch"/>
     <include file="$(find mr_roboto)/launch/wiimote_control.launch"/>
-
-
-    <include file="/opt/ros/melodic/share/rtabmap_ros/launch/rtabmap.launch">
-        <arg name="rtabmapviz" value="false"/>
-        <arg name="rgb_topic" value="/camera/color/image_raw"/>
-        <arg name="depth_topic" value="/camera/aligned_depth_to_color/image_raw"/>
-        <arg name="camera_info_topic" value="/camera/color/camera_info"/>
-        <arg name="compressed" value="true"/>
-        <arg name="rtabmap_args" value="--delete_db_on_start"/>
+    <include file="$(find mr_roboto)/launch/rtabmap.launch"/>
     </include>
 </launch>
