@@ -1,0 +1,14 @@
+<launch>
+    
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="enable_depth" default="false"/>
+        <arg name="enable_infra" default="false"/>
+        <arg name="publish_tf" default="false"/>
+        <arg name="publish_odom_tf" default="false"/>
+
+        <arg name="color_width"  value="1920"/>
+        <arg name="color_height" value="1080"/>
+        <arg name="color_fps" value="30"/>
+    </include>
+
+</launch>
