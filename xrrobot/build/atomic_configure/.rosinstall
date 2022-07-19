@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/willem/catkin_ws/src/xrrobot/build/devel/setup.sh

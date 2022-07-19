@@ -1,0 +1,6 @@
+<launch>
+ <include file="$(find xrrobot)/launch/bringup.launch"/> 
+ <include file="$(find xrrobot)/launch/camera.launch"/> 
+ <include file="$(find xrrobot)/launch/navigate.launch"/> 
+
+</launch>

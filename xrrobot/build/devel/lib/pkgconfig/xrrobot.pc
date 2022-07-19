@@ -1,0 +1,8 @@
+prefix=/home/willem/catkin_ws/src/xrrobot/build/devel
+
+Name: xrrobot
+Description: Description of xrrobot
+Version: 1.0.0
+Cflags: -I/home/willem/catkin_ws/src/xrrobot/include
+Libs: -L${prefix}/lib -lrikirobot
+Requires: roscpp rospy tf nav_msgs riki_msgs geometry_msgs sensor_msgs std_msgs

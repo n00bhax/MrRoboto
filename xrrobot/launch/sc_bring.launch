@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="xrrobot" type="SC_node.py" name="sc_node" output="screen">
+  </node>
+<node pkg="xrrobot" type="robot_status_interaction.py" name="robot_status_interaction" output="screen">
+  </node>
+</launch>
