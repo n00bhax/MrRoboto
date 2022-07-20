@@ -4,13 +4,7 @@
     <include file="$(find mr_roboto)/launch/wiimote_control.launch"/>
 
     <!-- Start RPLIDAR sensor node which provides LaserScan data  -->
-    <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
-        <param name="serial_port" type="string" value="/dev/xrlidar"/>
-        <param name="serial_baudrate" type="int" value="115200"/>
-        <param name="frame_id" type="string" value="laser"/>
-        <param name="inverted" type="bool" value="false"/>
-        <param name="angle_compensate" type="bool" value="true"/>
-    </node>
+    <include file="$(find mr_roboto)/launch/rplidar.launch"/>
 
     <arg name="geotiff_map_file_path" default="$(find hector_geotiff)/maps"/>
 
