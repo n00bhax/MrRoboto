@@ -1,0 +1,4 @@
+<launch>
+  <!-- Start RViz with custom view -->
+  <node pkg="rviz" type="rviz" name="show_rviz" args="-d $(find mr_roboto)/rviz/cartographer.rviz"/>    
+</launch>
