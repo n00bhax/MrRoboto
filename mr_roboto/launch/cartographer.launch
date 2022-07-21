@@ -13,7 +13,7 @@
     <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
           -configuration_directory
               $(find mr_roboto)/configuration_files
-          -configuration_basename gbot_lidar_2d.lua" output="screen">
+          -configuration_basename cartographer_conf.lua" output="screen">
     </node>
 
 		<!-- Additional node which converts Cartographer map into ROS occupancy grid map. Not used and can be skipped in this case -->
