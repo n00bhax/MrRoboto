@@ -1,6 +1,7 @@
 <!-- https://github.com/Andrew-rw/gbot_core -->
 
 <launch>
+    
 		<!-- Load robot description and start state publisher -->
     <param name="robot_description" textfile="$(find xrrobot)/urdf/rikirobot.urdf" /> 
 
@@ -10,10 +11,11 @@
     <include file="$(find mr_roboto)/launch/rplidar.launch"/>
 		
 		<!-- Start Google Cartographer node with custom configuration file-->
-    <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
-          -configuration_directory
-              $(find mr_roboto)/configuration_files
-          -configuration_basename cartographer_conf.lua" output="screen">
+    <node name="cartographer_node" pkg="cartographer_ros" 
+          type="cartographer_node" args="
+          -configuration_directory $(find mr_roboto)/configuration_files
+          -configuration_basename cartographer_conf.lua" 
+          output="screen">
     </node>
 
 		<!-- Additional node which converts Cartographer map into ROS occupancy grid map. Not used and can be skipped in this case -->
