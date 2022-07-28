@@ -1,4 +1,9 @@
 <launch>
+
     <node pkg="wiimote" type="wiimote_node" name="wiimote_pairing" output="screen"/>
-    <node pkg="wiimote" type="teleop_wiimote" name="teleop" output="screen"/>
+    <node pkg="wiimote" type="teleop_wiimote" name="teleop" output="screen">
+        <param name="angular/z/throttle_percent" value="0.3"/>
+        <param name="linear/x/throttle_percent" value="0.65"/>
+    </node>
+
 </launch>
