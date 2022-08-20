@@ -1,7 +1,7 @@
 <launch>
 
     <!--serial communication between arduino and pc via usb /-->
-    <node name="arduino_serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <node name="arduino_adc_node" pkg="rosserial_python" type="serial_node.py" output="screen">
         <param name="port" value="/dev/adc" />
     </node>
 
