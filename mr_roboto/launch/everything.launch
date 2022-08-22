@@ -2,6 +2,6 @@
     <include file="$(find xrrobot)/launch/bringup.launch"/>
     <include file="$(find mr_roboto)/launch/camera.launch"/>
     <include file="$(find mr_roboto)/launch/wiimote_control.launch"/>
-    <include file="$(find mr_roboto)/launch/rtabmap.launch"/>
-    </include>
+    <include file="$(find mr_roboto)/launch/cartographer.launch"/>
+    <include file="$(find mr_roboto)/launch/tactile_sensor.launch"/>
 </launch>
