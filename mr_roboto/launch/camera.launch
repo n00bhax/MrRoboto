@@ -1,19 +1,26 @@
 <launch>
     
     <include file="$(find realsense2_camera)/launch/rs_camera.launch">
-        <arg name="enable_depth" default="false"/>
-        <arg name="enable_infra" default="false"/>
-        <arg name="publish_tf" default="false"/>
-        <arg name="publish_odom_tf" default="false"/>
+    
+        <arg name="publish_tf" value="true"/>
+        <arg name="publish_odom_tf" value="true"/>
 
-        <arg name="color_width"  value="1280"/>
-        <arg name="color_height" value="720"/>
-        <arg name="color_fps" value="30"/>
+        <arg name="enable_depth" value="true"/>
+        <arg name="align_depth" value="true"/>
+        <arg name="depth_fps" value="15"/>
+        <arg name="depth_width" value="640"/>
+        <arg name="depth_height" value="480"/>
 
-        <arg name="enable_gyro"        default="true"/>
-        <arg name="enable_accel"        default="true"/>
-        <arg name="unite_imu_method"    default="linear_interpolation"/>
+        <arg name="color_width"  value="960"/>
+        <arg name="color_height" value="540"/>
+        <arg name="color_fps" value="15"/>
+
+        <arg name="enable_gyro"        value="true"/>
+        <arg name="enable_accel"        value="true"/>
+        <arg name="unite_imu_method"    value="linear_interpolation"/>
+
+        <arg name="enable_pointcloud"  value="false"/>
 
     </include>
-
+    
 </launch>
