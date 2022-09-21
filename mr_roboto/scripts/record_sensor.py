@@ -21,17 +21,17 @@ def acc_callback(msg):
     xyz = np.append(xyz, clock)
     acc = np.append(acc, xyz.reshape(4,1), axis=1)
 
-    np.savetxt('/home/willem/catkin_ws/src/mr_roboto/scripts/acc.csv', acc.T, fmt='%.18e %.18e %.18e %d', delimiter=';')
+    np.savetxt('/home/willem/catkin_ws/src/mr_roboto/scripts/acc.csv', acc.T, fmt='%.18f ; %.18f ; %.18f ; %.9f')
 
 def adc_callback(msg):
 
     adc.append((msg.adc0, clock))
-    np.savetxt('/home/willem/catkin_ws/src/mr_roboto/scripts/adc.csv', np.asarray(adc), fmt='%d', delimiter=';')
+    np.savetxt('/home/willem/catkin_ws/src/mr_roboto/scripts/adc.csv', np.asarray(adc), fmt='%d ; %.9f')
 
 def clock_callback(msg):
     global clock
 
-    clock = msg.clock.secs - 1661503362 + msg.clock.nsecs*10^(-9)
+    clock = msg.clock.secs - 1661503362 + msg.clock.nsecs*10**-9
     print("Time:" + str(clock)) #for debugging purposes
     
 def listener():
